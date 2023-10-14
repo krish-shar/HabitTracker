@@ -25,6 +25,7 @@ export default function HeroSection() {
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundAttachment: 'scroll', // Optional, use if you want a fixed background
+                filter: 'blur(0px)',
             }}
           >
             <Stack
@@ -39,14 +40,20 @@ export default function HeroSection() {
                 fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
                 lineHeight={'110%'}
               >
-                Improve Your Life <br />
-                <Text as={'span'} color={'green.400'}>
+                <Text as={'span'} color={'white'}>Improve </Text>
+                 Your Life <br />
+                <Text as={'span'} color={'iliac'}>
                   all with one click
                 </Text>
               </Heading> 
+              <Box>
+              <Text color={'white'}>
+                The only journey is the journey within.
+                </Text>
               <Text color={'white'}>
                 Press "Get Started" to get personalized plans catered to your goals. 
               </Text>
+              </Box>
               <Stack
                 direction={'column'}
                 spacing={3}
@@ -56,7 +63,7 @@ export default function HeroSection() {
               >
                 <Button
                   colorScheme={'green'}
-                  bg={'green.400'}
+                  bg={'#326245'}
                   rounded={'full'}
                   px={6}
                   _hover={{
@@ -64,9 +71,6 @@ export default function HeroSection() {
                   }}
                 >
                   Get Started
-                </Button>
-                <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-                  Learn more
                 </Button>
               </Stack>
             </Stack>
