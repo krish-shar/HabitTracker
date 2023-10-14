@@ -1,21 +1,22 @@
+"use client";
 import React, {useEffect, useState} from 'react'
+import HeroSection from '@/components/HeroSection';
 
 function index() {
 
   const [message, setMessage] = useState("Loading...");
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/home').then(
-        (res) => res.json()
-    ).then(
-        (res) => setMessage(res.message)
-    )
-  }, [])
-
+    fetch('/api/hello')
+      .then(response => response.json())
+      .then(data => setMessage(data.message));
+  }, []);
 
 
   return (
+    <html lang="en">
     <div>{message}</div>
+    </html>
   )
 }
 
