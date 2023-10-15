@@ -44,16 +44,6 @@ const Quiz: React.FC = () => {
       options: ["Meditation", "Reading", "Journaling", "Art"],
       answer: "",
     },
-    {
-      question: "Organization/time management struggles:",
-      options: ["Procrastination", "Time management", "Organization"],
-      answer: "",
-    },
-    {
-      question: "Long-term aspirations and dreams:",
-      options: ["Travel the world", "Career achievements", "Personal growth"],
-      answer: "",
-    },
   ]);
 
   const [answers, setAnswers] = useState<QuizAnswers>({});
