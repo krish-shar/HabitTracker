@@ -41,8 +41,12 @@ const MindfulSection = () => {
         fontSize="5xl"
         color="white"
       >
+        <div>
+          <h1 >To meditate, click the start button below and focus on the video.</h1>
+          </div>
         {countdown > 0 ? (
           timerStarted ? (
+            
             <div>
               <CircularProgress
                 value={(countdown / 10) * 100} // Adjust value for the circular timer

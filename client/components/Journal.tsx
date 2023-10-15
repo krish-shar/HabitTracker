@@ -1,9 +1,14 @@
 "use client";
 
 import React, { useState } from 'react';
+import axios from 'axios';
+
 
 const Journal = () => {
   
+  const [givenPrompt, setGivenPrompt] = useState("Click New Prompt to get a prompt!")
+  const [loading, setLoading] = useState(false)
+
   const [journalEntry, setJournalEntry] = useState('');
   const [prompts, setPrompts] = useState([
     'Write about a memorable childhood experience.',
@@ -12,14 +17,17 @@ const Journal = () => {
     // Add more prompts here
   ]);
 
-  const getRandomPrompt = () => {
-    const randomIndex = Math.floor(Math.random() * prompts.length);
-    return prompts[randomIndex];
-  };
+  
 
-  const handleNewPrompt = () => {
-    const prompt = getRandomPrompt();
-    setJournalEntry(journalEntry + '\n\n' + prompt);
+  const handleNewPrompt = async () => {
+    setLoading(true)
+    
+    fetch("http://localhost:8080/api/llama_request").then((response) => response.json()).then((response) => {
+      setGivenPrompt(response.response)
+    })
+    
+    setLoading(false)
+
   };
 
   const handleJournalChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
@@ -29,7 +37,7 @@ const Journal = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-semibold mb-4">Journal Your Thoughts</h1>
-      <div className="mb-4">
+      <div className="mb-4 flex flex-row">
         
         <button
           onClick={handleNewPrompt}
@@ -37,6 +45,9 @@ const Journal = () => {
         >
           New Prompt
         </button>
+        <p className='p-2 text-sm text-slate-900 hover:text-slate-500'>
+          {loading ? "Loading...": givenPrompt}
+        </p>
       </div>
       <div className="border p-4">
         <textarea

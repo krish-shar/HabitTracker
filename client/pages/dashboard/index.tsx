@@ -24,31 +24,27 @@ const Dashboard = () => {
   }, []);
 
   if (!user || user.isSignedIn === false || user.user === null) {
-    const router = useRouter();
     router.push('/sign-in');
   }
 
   return (
     <>
       <div className="text-5xl font-semibold mb-4 py-7"> {/* Increased text size, made it bold, and added padding */}
-        { <Box className='pl-10'> Welcome Back, Krish </Box> }
+        { <Box className='pl-10'> Welcome Back, {user.user?.fullName} </Box> }
       </div>
 
-      <div className="mt-4 pl-10">
+      <div className="mt-4 pl-10 flex flex-row">
         <WorkoutProgress />
+        <Journal />
       </div>
 
       <div> 
-        <Journal />
+        
         <div className="translate-y-5 align-center">
-        <h3>Complete today's activities to unlock the next TROPHY! </h3>
+        <h3 className='p-12 text-xl '>Complete today&apos;s activities to unlock the next trophy! </h3>
         <Trophies />
         </div>
       </div>
-      <button onClick={useCamera} className="text-lg">
-        Use Camera
-      </button>
-      <UserButton />
     </>
   );
 };

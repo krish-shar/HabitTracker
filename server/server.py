@@ -2,6 +2,9 @@ from flask import Flask, request, jsonify, Response, Request
 from flask_cors import CORS
 from camera import VideoCamera, CurlCounter, ShoulderPressCounter
 import pymongo
+import json
+from llamaapi import LlamaAPI
+
 
 # app instance
 app = Flask(__name__)
@@ -10,6 +13,9 @@ CORS(app)
 # get database instance
 uri = "mongodb+srv://1:1@cluster0.1mtdyxs.mongodb.net/?retryWrites=true&w=majority"
 client = pymongo.MongoClient(uri)
+
+llama_api_key = "LL-8USqR8qsydVIrRQ54Jds0Ma6EufbB7ziu9UdylMH5hPI2t1aWs9cjOZcG0SxwDF1"
+llama = LlamaAPI(llama_api_key)
 
 curlCounter = CurlCounter(right=True)
 shoulderPressCounter = ShoulderPressCounter()
@@ -95,6 +101,22 @@ def reset_reps():
     shoulderPressCounter.count=0
     return jsonify({"message": "Reset Reps"})
 
+# /api/llama_request
+@app.route("/api/llama_request", methods=["GET"])
+def llama_request():
+    # prompt = request.json["prompt"]
+    # system = request.json["system"]
+    api_request_json = {
+        "model": "llama-13b-chat",
+        "messages": [
+            {"role": "system", "content": "you are going to act as a personal coach, you will give the user the best journal prompt possible for self improvement, keep your answers short, and limited to only the journal prompt, not fluff around it"},
+            {"role": "user", "content": "hi, please give me a good journal prompt for self improvement"}
+        ],
+        "max_length": 200,
+        "temperature": 0.9,
+    }
+    response = llama.run(api_request_json)
+    return jsonify({"response": response.json()['choices'][0]['message']['content']})
 
 # run app
 if __name__ == "__main__":
