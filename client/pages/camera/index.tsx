@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, {useEffect, useState} from "react";
 
 const Cam = () => {
@@ -14,22 +15,16 @@ const Cam = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-800">
-
-            <div className="flex flex-col items-center">
-
-                <h1 className="text-white text-4xl font-bold p-4">Camera</h1>
-
-                <div className='flex justify-center'>
-                    <img
-                        src="http://localhost:8080/video_feed"
-                        alt="Video"
-                    />
-                </div>
-
-            </div>
-
+        <div className="bg-gray-800 flex flex-col items-center">
+        <h1 className="text-white text-4xl font-bold">Camera</h1>
+        <div className='flex justify-center border border-black rounded-lg'>
+            <img
+                src="http://localhost:8080/video_feed"
+                alt="Video"
+            />
         </div>
+    </div>
+    
 
     );
 }
