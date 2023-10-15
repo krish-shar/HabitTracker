@@ -4,6 +4,7 @@ import WorkoutCard from '@/components/WorkoutCard'
 
 
 
+
 function App() {
     return (
       <div>
@@ -22,7 +23,6 @@ function App() {
       </div>
     </div>
   </div>
-  
     )
   }
 

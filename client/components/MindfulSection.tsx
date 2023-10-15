@@ -4,7 +4,7 @@ import { CircularProgress, CircularProgressLabel, Box, Flex, Button } from '@cha
 const MindfulSection = () => {
   const [countdown, setCountdown] = useState(300); // Initial countdown value
   const [timerStarted, setTimerStarted] = useState(false);
-  const videoURL = '/please_work.mp4'; // Path to your video in the public directory
+  const videoURL = '/purple-live-wallpaper.mp4'; // Path to your video in the public directory
 
   useEffect(() => {
     if (timerStarted) {
@@ -52,12 +52,7 @@ const MindfulSection = () => {
               >
                 <CircularProgressLabel>{`${countdown}s`}</CircularProgressLabel>
               </CircularProgress>
-              <Button
-                onClick={handleRestartTimer}
-                size="lg"
-                colorScheme="green"
-                mt={4}
-              >
+              <Button onClick={handleRestartTimer} size="lg" colorScheme="red" mt={4}>
                 Restart
               </Button>
             </div>
