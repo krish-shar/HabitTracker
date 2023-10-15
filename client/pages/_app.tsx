@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar'
 import React from "react";
 import {ClerkProvider} from "@clerk/nextjs";
 import LogoSection from '@/components/LogoSection';
+import MindfulSection from '@/components/MindfulSection';
 
 export default function App({Component, pageProps}: AppProps) {
     return (
@@ -13,6 +14,7 @@ export default function App({Component, pageProps}: AppProps) {
             <ChakraProvider>
                 <LogoSection />
                 <Navbar/>
+                <MindfulSection />
 
                 <Component {...pageProps} />
             </ChakraProvider>

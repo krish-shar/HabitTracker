@@ -1,4 +1,3 @@
-Quiz:
 import React, { useState } from "react";
 
 interface QuizQuestion {
