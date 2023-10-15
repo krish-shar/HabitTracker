@@ -15,6 +15,7 @@ export default function App({Component, pageProps}: AppProps) {
             <ChakraProvider>
                 <LogoSection />
                 <Navbar/>
+                {/* <MindfulSection /> */}
 
                 <Component {...pageProps} />
 
