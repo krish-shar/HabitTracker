@@ -15,6 +15,12 @@
     
     export default function Navbar() {
         const { isOpen, onToggle } = useDisclosure();
+        
+        const routes = {
+            "Exercises": "/exercises",
+            "Home": "/",
+            "Mindfulness": "/mindfulness",
+          };
     
         return (
         <Box>
@@ -68,7 +74,7 @@
                 <Text
                 as="a"
                 p={2}
-                href={navItem.href ?? '#'}
+                href={navItem.href || '/'}
                 fontSize="sm"
                 fontWeight={500}
                 color={linkColor}
@@ -105,7 +111,7 @@
             <Box
             py={2}
             as="a"
-            href={href ?? '#'}
+            href={href}
             justifyContent="space-between"
             alignItems="center"
             _hover={{
@@ -131,32 +137,17 @@
     const NAV_ITEMS = [
         {
         label: 'Exercises',
+        href: '/exercises',
+        
         children: [
-            {
-            label: 'Explore Design Work',
-            subLabel: 'Trending Design to inspire you',
-            href: '#',
-            },
-            {
-            label: 'New & Noteworthy',
-            subLabel: 'Up-and-coming Designers',
-            href: '#',
-            },
+            
         ],
         },
         {
         label: 'Home',
+        href: '/',
         children: [
-            {
-            label: 'Job Board',
-            subLabel: 'Find your dream design job',
-            href: '#',
-            },
-            {
-            label: 'Freelance Projects',
-            subLabel: 'An exclusive list for contract work',
-            href: '#',
-            },
+          
         ],
         },
         {
