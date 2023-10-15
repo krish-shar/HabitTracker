@@ -1,16 +1,23 @@
 "use client";
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import HeroSection from '@/components/HeroSection';
-
-function index() {
-
+import {UserButton, useUser} from "@clerk/nextjs";
 
 
-  return (
-    <>
-    <div><HeroSection /></div>
-    </>
-  )
+
+function App() {
+
+
+
+    return (
+        <div>
+            <div>
+                <HeroSection/>
+                hello
+                <UserButton afterSignOutUrl="/"/>
+            </div>
+        </div>
+    )
 }
 
-export default index
+export default App

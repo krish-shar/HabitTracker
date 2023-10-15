@@ -12,10 +12,14 @@
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/next-js": "^2.1.5",
     "@chakra-ui/react": "^2.8.1",
+    "@clerk/nextjs": "^4.25.4",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@prisma/client": "^5.4.2",
+    "axios": "^1.5.1",
     "framer-motion": "^10.16.4",
     "next": "13.5.4",
+    "next-images": "^1.8.5",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0"
@@ -28,6 +32,7 @@
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
     "postcss": "^8",
+    "prisma": "^5.4.2",
     "tailwindcss": "^3",
     "typescript": "^5"
   }
