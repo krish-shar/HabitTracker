@@ -13,8 +13,8 @@ function App() {
         <div>
             <div>
                 <HeroSection/>
-                hello
-                <UserButton afterSignOutUrl="/"/>
+                {/* hello */}
+                {/* <UserButton afterSignOutUrl="/"/> */}
             </div>
         </div>
     )
