@@ -40,10 +40,10 @@ export default function HeroSection() {
                 fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
                 lineHeight={'110%'}
               >
-                <Text as={'span'} color={'white'}>Improve </Text>
-                 Your Life <br />
+                <Text as={'span'} color={'white'}>Change </Text>
+                 your life <br />
                 <Text as={'span'} color={'iliac'}>
-                  all with one click
+                  with one click
                 </Text>
               </Heading> 
               <Box>
