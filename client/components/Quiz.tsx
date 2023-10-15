@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+Quiz:
 interface QuizQuestion {
   question: string;
   options: string[];
@@ -9,8 +10,13 @@ interface QuizQuestion {
 const Quiz: React.FC = () => {
   const [questions, setQuestions] = useState<QuizQuestion[]>([
     {
-      question: "Top three personal/professional goals for the next year:",
-      options: ["Career advancement", "Health improvement", "Learning new skills"],
+      question: "Age:",
+      options: ["18-26", "27-40", "41-60","61+"],
+      answer: "",
+    },
+    {
+      question: "Gender:",
+      options: ["Male", "Female", "Nonbinary"],
       answer: "",
     },
     {
@@ -20,67 +26,32 @@ const Quiz: React.FC = () => {
     },
     {
       question: "Types of physical activities I enjoy:",
-      options: ["Yoga", "Running", "Swimming", "Weightlifting", "Dancing", "Other"],
+      options: ["Yoga", "Running", "Swimming", "Weightlifting", "Dancing"],
       answer: "",
     },
     {
-      question: "Any physical limitations or health conditions:",
-      options: ["No limitations/conditions", "Asthma", "Arthritis", "Injury recovery", "Other"],
-      answer: "",
-    },
-    {
-      question: "Average hours of sleep and sleep-related concerns:",
-      options: ["6 hours or less", "7-8 hours", "9 hours or more", "Insomnia", "Other"],
+      question: "Average hours of sleep per night:",
+      options: ["6 hours or less", "7-8 hours", "9 hours or more"],
       answer: "",
     },
     {
       question: "Typical daily routine:",
-      options: ["Early riser", "Night owl", "Regular 9 to 5", "Variable schedule", "Other"],
-      answer: "",
-    },
-    {
-      question: "Specific mental challenges/goals:",
-      options: ["Stress management", "Focus and concentration", "Mood regulation", "Anxiety", "Other"],
+      options: ["Early riser", "Night owl", "Regular 9 to 5", "Variable schedule"],
       answer: "",
     },
     {
       question: "Preferred methods of mental exercise/relaxation:",
-      options: ["Meditation", "Reading", "Journaling", "Art", "Other"],
-      answer: "",
-    },
-    {
-      question: "Dietary restrictions/preferences:",
-      options: ["Vegetarian", "Vegan", "Gluten-free", "None", "Other"],
-      answer: "",
-    },
-    {
-      question: "Time constraints/scheduling challenges:",
-      options: ["Busy work schedule", "Family commitments", "School/Study", "Other"],
-      answer: "",
-    },
-    {
-      question: "Motivation and tracking strategies:",
-      options: ["Setting goals", "Accountability partner", "Rewards", "Other"],
+      options: ["Meditation", "Reading", "Journaling", "Art"],
       answer: "",
     },
     {
       question: "Organization/time management struggles:",
-      options: ["Procrastination", "Time management", "Organization", "Other"],
-      answer: "",
-    },
-    {
-      question: "Supportive resources/individuals:",
-      options: ["Family", "Friends", "Online communities", "Therapist/counselor", "Other"],
-      answer: "",
-    },
-    {
-      question: "Past successes and challenges:",
-      options: ["Achieved goals", "Overcame obstacles", "Setbacks", "Other"],
+      options: ["Procrastination", "Time management", "Organization"],
       answer: "",
     },
     {
       question: "Long-term aspirations and dreams:",
-      options: ["Travel the world", "Career achievements", "Personal growth", "Other"],
+      options: ["Travel the world", "Career achievements", "Personal growth"],
       answer: "",
     },
   ]);

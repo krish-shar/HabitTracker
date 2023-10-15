@@ -152,7 +152,7 @@
         },
         {
         label: 'Mindfulness',
-        href: '#',
+        href: '/mindfulness',
         },
     ];
     
