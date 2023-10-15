@@ -3,8 +3,7 @@ import React, {useEffect, useState} from 'react'
 import { useRouter } from 'next/router';
 
 
-function Excercises() {
-
+function Exercises() {
   const router = useRouter()
 
   
@@ -16,4 +15,21 @@ function Excercises() {
   )
 }
 
-export default Excercises
+export default Exercises
+
+
+// const Dashboard = () => {
+//   const router = useRouter();
+
+//   // Create a function to route to the "/camera" page
+//   const useCamera = () => {
+//     router.push("/camera");
+//   };
+
+//   return (
+//     <div>
+//       Dashboard
+//       <button onClick={useCamera} className="text-lg ">Use Camera</button>
+//       <UserButton />
+//     </div>
+//   );
