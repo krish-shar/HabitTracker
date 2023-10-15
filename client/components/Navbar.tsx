@@ -110,8 +110,8 @@
         ],
         },
         {
-        label: 'Home',
-        href: '/',
+        label: 'Dashboard',
+        href: '/dashboard',
         children: [
           
         ],
