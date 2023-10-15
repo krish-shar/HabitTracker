@@ -1,23 +1,19 @@
 "use client";
 import React, {useEffect, useState} from 'react'
-import HeroSection from '@/components/HeroSection';
+import { useRouter } from 'next/router';
 
-function index() {
 
-  const [message, setMessage] = useState("Loading...");
+function Excercises() {
 
-  useEffect(() => {
-    fetch('/api/hello')
-      .then(response => response.json())
-      .then(data => setMessage(data.message));
-  }, []);
+  const router = useRouter()
 
+  
 
   return (
     <>
-    <div>{message}</div>
+    <div className='text-xl'>exercises</div>
     </>
   )
 }
 
-export default index
+export default Excercises
