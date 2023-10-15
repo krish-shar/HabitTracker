@@ -7,7 +7,7 @@ import PoseModule
 class VideoCamera(object):
     def __init__(self):
         self.video = cv2.VideoCapture(0)
-        self.detector = PoseModule.PoseDetector()
+        self.detector = PoseModule.PoseDetector(upBody=True)
         self.nodeJoints = [
             [13, 11, 23],
             [15, 13, 11],
@@ -25,6 +25,7 @@ class VideoCamera(object):
 
     def __del__(self):
         self.video.release()
+        self.video = None
 
     def get_frame(self):
         success, img = self.video.read()
@@ -39,7 +40,7 @@ class VideoCamera(object):
         fps = 1 / (c_time - self.pTime)
         self.pTime = c_time
 
-        cv2.putText(img, str(int(fps)), (70, 50), cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 255), 3)
+        cv2.putText(img, str(int(fps)), (70, 50), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 255), 3)
 
         success, jpeg = cv2.imencode('.jpg', img)
         return jpeg.tobytes()

@@ -44,7 +44,7 @@ class PoseDetector():
                 self.lmList.append([idx, cx, cy])
                 if draw:
                     cv2.circle(img, (cx, cy), 5,
-                               (255, 0, 0), cv2.FILLED)
+                               (0, 0, 0), cv2.FILLED)
         return self.lmList
 
     # find angle between three different nodes
@@ -63,14 +63,14 @@ class PoseDetector():
 
         # draw the angle
         if draw:
-            cv2.line(img, (x1, y1), (x2, y2), (255, 255, 255), 3)
-            cv2.line(img, (x3, y3), (x2, y2), (255, 255, 255), 3)
-            cv2.circle(img, (x1, y1), 10, (0, 0, 255), cv2.FILLED)
-            cv2.circle(img, (x1, y1), 15, (0, 0, 255), 2)
-            cv2.circle(img, (x2, y2), 10, (0, 0, 255), cv2.FILLED)
-            cv2.circle(img, (x2, y2), 15, (0, 0, 255), 2)
-            cv2.circle(img, (x3, y3), 10, (0, 0, 255), cv2.FILLED)
-            cv2.circle(img, (x3, y3), 15, (0, 0, 255), 2)
+            cv2.line(img, (x1, y1), (x2, y2), (0, 0, 0), 3)
+            cv2.line(img, (x3, y3), (x2, y2), (0, 0, 0), 3)
+            cv2.circle(img, (x1, y1), 10, (0, 0, 0), cv2.FILLED)
+            cv2.circle(img, (x1, y1), 15, (0, 0, 0), 2)
+            cv2.circle(img, (x2, y2), 10, (0, 0, 0), cv2.FILLED)
+            cv2.circle(img, (x2, y2), 15, (0, 0, 0), 2)
+            cv2.circle(img, (x3, y3), 10, (0, 0, 0), cv2.FILLED)
+            cv2.circle(img, (x3, y3), 15, (0, 0, 0), 2)
 
         # add the angle number
         if addNumbers:
