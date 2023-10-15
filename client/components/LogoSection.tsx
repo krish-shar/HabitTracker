@@ -12,12 +12,17 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, ChevronRightIcon, ChevronDownIcon } from '@chakra-ui/icons';
+import { useUser, UserButton } from '@clerk/nextjs';
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const [selectedLabel, setSelectedLabel] = useState(''); // State to track the selected label
 
-  const handleLabelClick = (label) => {
+
+  const user = useUser();
+
+
+  const handleLabelClick = (label: string) => {
     setSelectedLabel(label);
   };
 
@@ -55,13 +60,14 @@ export default function Navbar() {
               aria-label="Toggle Navigation"
             />
           </Flex>
+          {user.isSignedIn ? <UserButton /> :
           <Flex align="center" className="padding-right:10px">
           <Button
             as="a"
             fontSize="sm"
             fontWeight={400}
             variant="link"
-            href="#"
+            href="sign-in"
             color="#a6c4cf"
           >
             Sign Inㅤ
@@ -72,94 +78,25 @@ export default function Navbar() {
             fontSize="sm"
             fontWeight={400}
             variant="link"
-            href="#"
+            href="/sign-up"
             color="#a6c4cf"
           >
            ㅤSign Up
           </Button>
+
+            
         </Flex>
+}
         </Flex>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+
       </Collapse>
     </Box>
   );
 }
 
-const DesktopNav = ({ selectedLabel, handleLabelClick }) => {
-  const linkColor = 'white';
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
-
-  return (
-    <Stack direction="row" spacing={4} align="center">
-      {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Text
-            as="a"
-            p={2}
-            href={navItem.href ?? '#'}
-            fontSize="sm"
-            fontWeight={500}
-            color={linkColor}
-            _hover={{
-              textDecoration: 'none',
-              color: linkHoverColor,
-            }}
-            textAlign="center"
-            paddingX={3}
-            className={selectedLabel === navItem.label ? 'selected' : ''} // Apply 'selected' class conditionally
-            onClick={() => handleLabelClick(navItem.label)} // Handle label click
-          >
-            {navItem.label}
-          </Text>
-        </Box>
-      ))}
-    </Stack>
-  );
-}
-
-const MobileNav = () => {
-  return (
-    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
-  );
-}
-
-const MobileNavItem = ({ label, children, href }) => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Box
-        py={2}
-        as="a"
-        href={href ?? '#'}
-        justifyContent="space-between"
-        alignItems="center"
-        _hover={{
-          textDecoration: 'none',
-        }}
-      >
-        <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
-          {label}
-        </Text>
-        {children && (
-          <ChevronDownIcon
-            transition="all .25s ease-in-out"
-            transform={isOpen ? 'rotate(180deg)' : ''}
-            w={6}
-            h={6}
-          />
-        )}
-      </Box>
-    </Stack>
-  );
-}
 
 const NAV_ITEMS = [
   {
