@@ -52,7 +52,12 @@ const MindfulSection = () => {
               >
                 <CircularProgressLabel>{`${countdown}s`}</CircularProgressLabel>
               </CircularProgress>
-              <Button onClick={handleRestartTimer} size="lg" colorScheme="red" mt={4}>
+              <Button
+                onClick={handleRestartTimer}
+                size="lg"
+                colorScheme="green"
+                mt={4}
+              >
                 Restart
               </Button>
             </div>
@@ -71,7 +76,12 @@ const MindfulSection = () => {
             >
               <CircularProgressLabel>0s</CircularProgressLabel>
             </CircularProgress>
-            <Button onClick={handleRestartTimer} size="lg" colorScheme="red" mt={4}>
+            <Button
+              onClick={handleRestartTimer}
+              size="lg"
+              colorScheme="green"
+              mt={4}
+            >
               Restart
             </Button>
           </div>
