@@ -56,7 +56,7 @@ const Quiz: React.FC = () => {
     },
   ]);
 
-  const [answers, setAnswers] = useState<QuizAnswers>({});
+  const [answers, setAnswers] = useState({});
 
   const handleSelectOption = (question: QuizQuestion, selectedOption: string) => {
     setAnswers((prevAnswers) => {

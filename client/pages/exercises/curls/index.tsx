@@ -33,7 +33,7 @@ function Excercises() { // get message from server
                 <h1 className="text-white text-4xl font-bold">Camera</h1>
                 <p className="text-white text-xl">Rep count: {message}</p>
                 <div className='flex justify-center border border-black rounded-lg'>
-                    <img src="http://localhost:8080/video_feed" alt="Video"/>
+                    <img src="http://localhost:8080/exercise/curls" alt="Video"/>
                 </div>
 
                 <p className="text-white text-sm italic">

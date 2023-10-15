@@ -76,16 +76,7 @@ const MindfulSection = () => {
             >
               <CircularProgressLabel>0s</CircularProgressLabel>
             </CircularProgress>
-<<<<<<< HEAD
             <Button onClick={handleRestartTimer} size="md" colorScheme="light red" mt={4} justifyItems={'center'}>
-=======
-            <Button
-              onClick={handleRestartTimer}
-              size="lg"
-              colorScheme="green"
-              mt={4}
-            >
->>>>>>> 258aebff18e96769424725d4265034412153e286
               Restart
             </Button>
           </div>

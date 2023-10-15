@@ -46,7 +46,7 @@ export default function Navbar() {
             fontWeight={100}
             color="white"
           >
-             ㅤflourish
+             flourish
           </Text>
         <Flex>
           <Flex
@@ -60,7 +60,7 @@ export default function Navbar() {
               aria-label="Toggle Navigation"
             />
           </Flex>
-          {user.isSignedIn ? <UserButton /> :
+          {user.isSignedIn ? <UserButton afterSignOutUrl='/'/> :
           <Flex align="center" className="padding-right:10px">
           <Button
             as="a"

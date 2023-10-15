@@ -79,7 +79,7 @@ def exercises():
 # /api/shoulder_press_rep_count
 @app.route("/api/shoulder_press_rep_count", methods=["GET"])
 def shoulder_press():
-    return jsonify({"rep": shoulderPressCounter.count})
+    return jsonify({"rep": shoulderPressCounter.leftCount})
 
 # /api/switch_arm
 @app.route("/api/switch_arm", methods=["GET"])
